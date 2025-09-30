@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: api-rollout
+spec:
+  replicas: 3
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: api-app
+  template:
+    metadata:
+      labels:
+        app: api-app
+    spec:
+      containers:
+        - name: api
+          image: hashicorp/http-echo:latest
+          args:
+            - "-text=Green Version v3" # Changed this
+            - "-listen=:8080"
+          ports:
+            - containerPort: 8080
+  strategy:
+    blueGreen:
+      activeService: api-service-active
+      previewService: api-service-preview
+      autoPromotionEnabled: false
+      scaleDownDelaySeconds: 30
