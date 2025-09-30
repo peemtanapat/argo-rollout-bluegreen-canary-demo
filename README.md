@@ -21,7 +21,7 @@ This repository provides **production-ready examples** of:
 
 ```
 📦 argo-rollout-bluegreen-canary-demo
-├── 🔵 blue-green-rollout/      # 🏭 Production-ready with NGINX Ingress
+├── 🔵 blue-green-rollout/                 # 🏭 Production-ready with NGINX Ingress
 │   ├── blue-green-rollout.yaml            # Main rollout configuration
 │   ├── api-ingress.yaml                   # Ingress routing rules
 │   └── src/                               # 📸 Screenshots & diagrams
