@@ -8,7 +8,7 @@ spec:
   ports:
     - port: 80
       targetPort: 8080
-  type: LoadBalancer
+  type: ClusterIP
 
 ---
 apiVersion: v1
@@ -21,7 +21,7 @@ spec:
   ports:
     - port: 80
       targetPort: 8080
-  type: LoadBalancer
+  type: ClusterIP
 
 ---
 apiVersion: argoproj.io/v1alpha1
@@ -44,7 +44,7 @@ spec:
           image: hashicorp/http-echo:latest
           args:
             # text arg will be displayed in the API response
-            - "-text=Blue Version v1.0"
+            - "-text=Green Version v2.0"
             - "-listen=:8080"
           ports:
             - containerPort: 8080
@@ -52,5 +52,5 @@ spec:
     blueGreen:
       activeService: api-service-active
       previewService: api-service-preview
-      autoPromotionEnabled: false # automatic promotion after success (pods are running and healthy (passing readiness probes)
-      scaleDownDelaySeconds: 30 # controls how long the old version stays running after promotion
+      autoPromotionEnabled: false
+      scaleDownDelaySeconds: 30

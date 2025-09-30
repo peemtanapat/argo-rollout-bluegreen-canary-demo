@@ -52,5 +52,5 @@ spec:
     blueGreen:
       activeService: api-service-active
       previewService: api-service-preview
-      autoPromotionEnabled: false
-      scaleDownDelaySeconds: 30
+      autoPromotionEnabled: false # automatic promotion after success (pods are running and healthy (passing readiness probes)
+      scaleDownDelaySeconds: 30 # controls how long the old version stays running after promotion
