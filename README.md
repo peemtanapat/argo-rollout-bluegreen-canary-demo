@@ -10,10 +10,10 @@
 This repository provides **production-ready examples** of:
 - 🔵🟢 **Blue-Green Deployments** - Instant traffic switching with zero downtime
 - 🐦 **Canary Deployments** - Gradual rollout with traffic splitting  
-- 🏗️ **Two deployment approaches** - From simple to production-grade
+- 🏗️ **Production-grade deployment strategies**
 
 
-<img src="./blue-green-rollout-with-nginx/src/flow-diagram.png" alt="Blue-Green Full Flow Diagram" width="500"/>
+<img src="./blue-green-rollout/src/flow-diagram.png" alt="Blue-Green Full Flow Diagram" width="500"/>
 
 <img src="./canary-rollout/src/dashboard-75p-canary-deploy.png" alt="Canary Dashboard 75%" width="500"/>
 
@@ -21,13 +21,10 @@ This repository provides **production-ready examples** of:
 
 ```
 📦 argo-rollout-bluegreen-canary-demo
-├── 🔵 blue-green-rollout-with-nginx/      # 🏭 Production-ready with NGINX Ingress
+├── 🔵 blue-green-rollout/      # 🏭 Production-ready with NGINX Ingress
 │   ├── blue-green-rollout.yaml            # Main rollout configuration
 │   ├── api-ingress.yaml                   # Ingress routing rules
 │   └── src/                               # 📸 Screenshots & diagrams
-├── 🔵 blue-green-rollout-with-portforward/ # 🎓 Learning-friendly setup
-│   ├── blue-green-rollout.yaml            # Simple configuration
-│   └── README.md                          # Step-by-step guide
 └── 🐦 canary-rollout/                     # 📈 Progressive deployment
     ├── canary-rollout.yaml                # Canary configuration
     └── src/                               # 📊 Dashboard screenshots
@@ -57,30 +54,11 @@ brew install argoproj/tap/kubectl-argo-rollouts
 
 ## 🎮 Choose Your Adventure
 
-### 🎓 **Option 1: Learning Mode** - Blue-Green with Port Forward
-*Perfect for understanding the basics*
+### � **Option 1: Blue-Green Deployment** - Production-Ready with NGINX Ingress
+*Real-world setup with domain names and zero downtime*
 
 ```bash
-cd blue-green-rollout-with-portforward/
-kubectl apply -f blue-green-rollout.yaml
-
-# 🌐 Access your app
-kubectl port-forward svc/api-service-active 8080:80
-curl http://localhost:8080  # Should return "Blue Version v1.0"
-```
-
-**What you'll see:**
-- ✅ Instant deployment switching
-- ✅ Manual promotion controls
-- ✅ Zero downtime in action
-
----
-
-### 🏭 **Option 2: Production Mode** - Blue-Green with NGINX Ingress
-*Real-world setup with domain names*
-
-```bash
-cd blue-green-rollout-with-nginx/
+cd blue-green-rollout/
 kubectl apply -f blue-green-rollout.yaml
 kubectl apply -f api-ingress.yaml
 
@@ -94,10 +72,11 @@ curl http://preview.api.local  # Preview your new version
 - 🔄 No connection disruption during promotion  
 - 👀 Always accessible active and preview versions
 - 🚀 Mimics real load balancer behavior
+- ⚡ Instant traffic switching between versions
 
 ---
 
-### 🐦 **Option 3: Canary Mode** - Progressive Traffic Splitting
+### 🐦 **Option 2: Canary Deployment** - Progressive Traffic Splitting
 *Gradual rollout with fine-grained control*
 
 ```bash
@@ -147,9 +126,9 @@ kubectl argo rollouts history api-rollout
 
 ## 🎓 Learning Path
 
-1. **Start Simple** 🎯 → Try the port-forward example first
-2. **Go Production** 🏭 → Move to NGINX Ingress setup  
-3. **Master Canary** 🐦 → Experiment with traffic splitting
+1. **Start with Blue-Green** 🔵🟢 → Experience instant traffic switching with NGINX Ingress
+2. **Master Canary** 🐦 → Experiment with progressive traffic splitting
+3. **Compare Strategies** ⚖️ → Understand when to use each approach
 4. **Read the Docs** 📚 → Check each subdirectory's README for deep dives
 
 ## 🚨 Troubleshooting
