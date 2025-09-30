@@ -9,6 +9,13 @@ Here's how to set up a production-like approach using NGINX Ingress
 <img src="./src/flow-diagram.png" alt="Full Flow Diagram" width="400"/>
 
 ```bash
+# Update Your Hosts File
+# Edit hosts file
+sudo nano /etc/hosts
+## Add these lines then Save and exit:
+# 127.0.0.1 api.local
+# 127.0.0.1 preview.api.local
+
 kubectl apply -f blue-green-rollout.yaml
 
 kubectl apply -f api-ingress.yaml
