@@ -6,7 +6,7 @@ Here's how to set up a production-like approach using NGINX Ingress
 - ✅ Active and preview versions are always accessible
 - ✅ Mimics how it works with real load balancers in production
 
-<img src="./src/flow-diagram.png" alt="Full Flow Diagram" width="400"/>
+<img src="./src/flow-diagram.png" alt="Full Flow Diagram" width="600"/>
 
 ```bash
 # Update Your Hosts File
