@@ -70,7 +70,7 @@ kubectl argo rollouts set image demo-app-rollout demo=argoproj/rollouts-demo:yel
 ```
 
 ### Example Dashboard of Canary Deployment (old-Blue to new-Yellow):
-*Revision 1 --> Revision 2
+* Revision 1 --> Revision 2
 
 https://github.com/user-attachments/assets/6865c143-853b-42aa-9759-49b7af0a98c1
 
@@ -86,6 +86,6 @@ kubectl argo rollouts abort demo-app
 kubectl argo rollouts undo demo-app
 ```
 ### Example Dashboard of Rollback (new-Yellow to old-Blue):
-*Revision 2 --> Revision 3
+* Revision 2 --> Revision 3
 <img src="./src/dashboard-rollback-50p-canary.png" alt="Dashboard 50% canary" width="500"/>
 <img src="./src/dashboard-rollback-100p-canary.png" alt="Dashboard 100% canary completed" width="500"/>
