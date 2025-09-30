@@ -72,6 +72,7 @@ kubectl argo rollouts set image demo-app-rollout demo=argoproj/rollouts-demo:yel
 ### Example Dashboard of Canary Deployment (old-Blue to new-Yellow):
 *Revision 1 --> Revision 2
 
+https://github.com/user-attachments/assets/6865c143-853b-42aa-9759-49b7af0a98c1
 
 <img src="./src/dashboard-25p-canary-deploy.png" alt="Dashboard 25% canary" width="500"/>
 <img src="./src/dashboard-75p-canary-deploy.png" alt="Dashboard 75% canary" width="500"/>
