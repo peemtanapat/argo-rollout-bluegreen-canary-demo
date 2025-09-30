@@ -1,11 +1,12 @@
 Here's how to set up a production-like approach using NGINX Ingress
 
-A production-like setup where:
+### A production-like setup where:
+- ✅ Services are accessed via stable domain names
+- ✅ No connection disruption during promotion
+- ✅ Active and preview versions are always accessible
+- ✅ Mimics how it works with real load balancers in production
 
-✅ Services are accessed via stable domain names
-✅ No connection disruption during promotion
-✅ Active and preview versions are always accessible
-✅ Mimics how it works with real load balancers in production
+<img src="./src/flow-diagram.png" alt="Full Flow Diagram" width="400"/>
 
 ```bash
 kubectl apply -f blue-green-rollout.yaml
