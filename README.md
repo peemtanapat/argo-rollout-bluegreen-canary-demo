@@ -37,35 +37,12 @@ This repository provides **production-ready examples** of:
 - 🔧 **kubectl** configured and working
 - 🏃‍♂️ **Ready to deploy!**
 
-### ⚡ One-Command Setup
-```bash
-# 🎯 Install Argo Rollouts (copy & paste this!)
-kubectl create namespace argo-rollouts && \
-kubectl apply -n argo-rollouts -f https://github.com/argoproj/argo-rollouts/releases/latest/download/install.yaml
-
-# ✅ Verify installation
-kubectl get pods -n argo-rollouts
-
-# 🛠️ Install kubectl plugin for better UX (optional but recommended!)
-brew install argoproj/tap/kubectl-argo-rollouts
-```
-
 > 💡 **Pro Tip**: The kubectl plugin gives you a beautiful dashboard and easier rollout management!
 
 ## 🎮 Choose Your Adventure
 
-### � **Option 1: Blue-Green Deployment** - Production-Ready with NGINX Ingress
+### **Blue-Green Deployment** - Production-Ready with NGINX Ingress
 *Real-world setup with domain names and zero downtime*
-
-```bash
-cd blue-green-rollout/
-kubectl apply -f blue-green-rollout.yaml
-kubectl apply -f api-ingress.yaml
-
-# 🌍 Test with real domains (add to /etc/hosts if needed)
-curl http://api.local          # Production traffic
-curl http://preview.api.local  # Preview your new version
-```
 
 **What makes it production-ready:**
 - 🌐 Stable domain names
@@ -76,16 +53,8 @@ curl http://preview.api.local  # Preview your new version
 
 ---
 
-### 🐦 **Option 2: Canary Deployment** - Progressive Traffic Splitting
+### 🐦 **Canary Deployment** - Progressive Traffic Splitting
 *Gradual rollout with fine-grained control*
-
-```bash
-cd canary-rollout/
-kubectl apply -f canary-rollout.yaml
-
-# 📊 Watch the magic happen
-kubectl argo rollouts get rollout api-rollout --watch
-```
 
 **Traffic progression:**
 - 🟢 **Step 1**: 25% new version, 75% old version
